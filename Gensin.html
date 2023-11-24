@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Foto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2; /* Ganti dengan warna latar belakang yang diinginkan */
+            animation: fadeIn 1s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            color: #333;
+        }
+        .album {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .photo {
+            width: 30%;
+            margin: 10px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.3s ease-in-out;
+        }
+        .photo:hover {
+            transform: scale(1.5);
+        }
+        .photo img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+        }
+        .photo.active {
+            transform: scale(1.5);
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Album Genshin Impact</h1>
+
+    <div class="album">
+        <div class="photo" onclick="zoomPhoto(this, 'photo1.jpg')">
+                <img src="images gensin2.jpeg" alt="Photo 1">
+        </div>
+        <div class="photo" onclick="zoomPhoto(this, 'photo2.jpg')">
+                <img src="images gensin3.jpeg" alt="Photo 2">
+        </div>
+        <div class="photo" onclick="zoomPhoto(this, 'photo3.jpg')">
+                <img src="path/to/album1/photo3.jpg" alt="Photo 3">
+        </div>
+    </div>
+
+    <script>
+        function zoomPhoto(element, filename) {
+            var photos = document.querySelectorAll('.photo');
+            photos.forEach(function(photo) {
+                photo.classList.remove('active');
+            });
+            element.classList.add('active');
+    </script>
+
+</body>
+</html>
